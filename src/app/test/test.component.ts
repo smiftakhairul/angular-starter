@@ -11,6 +11,13 @@ import { Component, OnInit } from '@angular/core';
       <div>{{ 'Name Length: ' + name.length }}</div>
       <div>{{ greet() }}</div>
       <div><a href="{{ siteUrl }}">{{ siteUrl }}</a></div>
+      <br>
+      <div>
+        <input [id]="myId" type="text" value="Lorem Ipsum"><br>
+        <input id="{{ myId }}" type="text" value="Lorem Ipsum"><br>
+        <input [disabled]="isDisabled" type="text" value="Lorem Ipsum"><br>
+        <input bind-disabled="isDisabled" type="text" value="Lorem Ipsum">
+      </div>
   `,
   // styleUrls: ['./test.component.css'],
   styles: [`
@@ -24,6 +31,8 @@ export class TestComponent implements OnInit {
   public subTitle = 'Component';
   public name = "S M Iftakhairul";
   public siteUrl = window.location.href;
+  public myId = 'testId';
+  public isDisabled = true;
 
   constructor() { }
 
