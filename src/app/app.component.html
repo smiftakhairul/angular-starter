@@ -5,6 +5,9 @@
     <!-- other 2 ways to define -->
     <!-- <div class="app-test"></div>
     <div app-test></div> -->
+    <hr>
+    <app-test2 (childEvent)="loremSubTitleMessage=$event" [parentData]="loremTitle"></app-test2>
+    <p>Message from child component: {{ loremSubTitleMessage }}</p>
   </div>
 </div>
 

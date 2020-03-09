@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Beginner Lesson';
+  public loremTitle = 'Lorem Ipsum Dolor Init!';
+  public loremSubTitleMessage = '';
 }
