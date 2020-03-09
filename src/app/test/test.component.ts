@@ -30,6 +30,11 @@ import { Component, OnInit } from '@angular/core';
         <p [style.color]="highlightColor">Highlight Color</p>
         <p [ngStyle]="styleClasses">Highlight Styles</p>
       </div>
+      <br>
+      <div>
+        <button (click)="onClick($event)">{{ greeting.length ? greeting : 'Greet' }}</button>
+        <button (click)="greeting = 'Hello World'">{{ greeting.length ? 'Hello World' : 'Greet' }}</button>
+      </div>
   `,
   // styleUrls: ['./test.component.css'],
   styles: [`
@@ -73,6 +78,8 @@ export class TestComponent implements OnInit {
     color: "blue",
     fontStyle: "italic"
   }
+  // event binding
+  public greeting = "";
 
   constructor() { }
 
@@ -86,6 +93,13 @@ export class TestComponent implements OnInit {
   // interpolation
   greet() {
     return 'Hello S M Iftakhairul';
+  }
+
+  // event binding
+  onClick(event) {
+    console.log('Good afternoon S M Iftakhairul');
+    console.log(event.type);
+    this.greeting = 'Good afternoon S M Iftakhairul';
   }
 
 }
