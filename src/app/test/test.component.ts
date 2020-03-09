@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   // templateUrl: './test.component.html',
   template: `
       <div class="orange">Inline Template of {{ getTitle() }} {{ subTitle }}</div>
+      <!-- interpolation -->
       <div>{{ 2 + 2 }}</div>
       <div>{{ 'Welcome ' + name }}</div>
       <div>{{ 'Welcome ' + name.toUpperCase() }}</div>
@@ -12,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
       <div>{{ greet() }}</div>
       <div><a href="{{ siteUrl }}">{{ siteUrl }}</a></div>
       <br>
+      <!-- property binding -->
       <div>
         <input [id]="myId" type="text" value="Lorem Ipsum"><br>
         <input id="{{ myId }}" type="text" value="Lorem Ipsum"><br>
@@ -19,21 +21,30 @@ import { Component, OnInit } from '@angular/core';
         <input bind-disabled="isDisabled" type="text" value="Lorem Ipsum">
       </div>
       <br>
+      <!-- class binding -->
       <div>
         <p [class]="successClass">Success</p>
         <p [class.text-error]="hasError">Error</p>
         <p [ngClass]="messageClasses">Special Class</p>
       </div>
       <br>
+      <!-- style binding -->
       <div>
         <p [style.color]="hasError ? 'red' : 'green'">Style Binding</p>
         <p [style.color]="highlightColor">Highlight Color</p>
         <p [ngStyle]="styleClasses">Highlight Styles</p>
       </div>
       <br>
+      <!-- event binding -->
       <div>
         <button (click)="onClick($event)">{{ greeting.length ? greeting : 'Greet' }}</button>
         <button (click)="greeting = 'Hello World'">{{ greeting.length ? 'Hello World' : 'Greet' }}</button>
+      </div>
+      <br>
+      <!-- template reference variables -->
+      <div>
+        <input #myInput type="text">
+        <button (click)="logMessage(myInput.value)">Log</button>
       </div>
   `,
   // styleUrls: ['./test.component.css'],
@@ -100,6 +111,11 @@ export class TestComponent implements OnInit {
     console.log('Good afternoon S M Iftakhairul');
     console.log(event.type);
     this.greeting = 'Good afternoon S M Iftakhairul';
+  }
+
+  // template reference variables
+  logMessage(value) {
+    console.log(value);
   }
 
 }
