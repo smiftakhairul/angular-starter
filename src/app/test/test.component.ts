@@ -24,6 +24,12 @@ import { Component, OnInit } from '@angular/core';
         <p [class.text-error]="hasError">Error</p>
         <p [ngClass]="messageClasses">Special Class</p>
       </div>
+      <br>
+      <div>
+        <p [style.color]="hasError ? 'red' : 'green'">Style Binding</p>
+        <p [style.color]="highlightColor">Highlight Color</p>
+        <p [ngStyle]="styleClasses">Highlight Styles</p>
+      </div>
   `,
   // styleUrls: ['./test.component.css'],
   styles: [`
@@ -60,6 +66,12 @@ export class TestComponent implements OnInit {
     "text-success": !this.hasError,
     "text-error": this.hasError,
     "text-warning": this.hasWarning
+  }
+  // style binding
+  public highlightColor = "purple";
+  public styleClasses = {
+    color: "blue",
+    fontStyle: "italic"
   }
 
   constructor() { }
