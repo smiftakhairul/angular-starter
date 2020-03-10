@@ -1,0 +1,18 @@
+<!-- Pipes -->
+<span>{{ name }}</span>&nbsp;&nbsp;
+<span>{{ name | uppercase }}</span>&nbsp;&nbsp;
+<span>{{ name | lowercase }}</span>&nbsp;&nbsp;
+<span>{{ name | titlecase }}</span>&nbsp;&nbsp;
+<span>{{ name | slice:3 }}</span>&nbsp;&nbsp;
+<span>{{ name | slice:3:5 }}</span>&nbsp;&nbsp;
+<span>{{ personInfo | json }}</span>&nbsp;&nbsp;<br>
+<span>{{ 5.678 | number:'1.2-3' }}</span>&nbsp;&nbsp;
+<span>{{ 0.55 | percent }}</span>&nbsp;&nbsp;
+<span>{{ 10 | currency }}</span>&nbsp;&nbsp;
+<span>{{ 10 | currency:'EUR' }}</span>&nbsp;&nbsp;
+<span>{{ 10 | currency:'EUR':'code' }}</span>&nbsp;&nbsp;
+<br>
+<span>{{ date }}</span>&nbsp;&nbsp;
+<span>{{ date | date:'short' }}</span>&nbsp;&nbsp;
+<span>{{ date | date:'shortDate' }}</span>&nbsp;&nbsp;
+<span>{{ date | date:'shortTime' }}</span>&nbsp;&nbsp;
