@@ -1,17 +1,28 @@
 <div class="main-component">
   <h2>App Components</h2>
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    &nbsp;&nbsp;
+    <a routerLink="/employees" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Employees</a>&nbsp;&nbsp;
+    <a routerLink="/employees/details/all" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Employees Details</a>&nbsp;&nbsp;
+    <a routerLink="/departments" routerLinkActive="active">Departments</a>&nbsp;&nbsp;
+    <a routerLink="/faculties" routerLinkActive="active">Faculties</a>&nbsp;&nbsp;
+  </nav>
+  <br>
   <div class="test-component">
     <app-test></app-test>
     <!-- other 2 ways to define -->
     <!-- <div class="app-test"></div>
     <div app-test></div> -->
-    <hr>
+    <!-- <hr> -->
     <app-test2 (childEvent)="loremSubTitleMessage=$event" [parentData]="loremTitle"></app-test2>
     <p>Message from child component: {{ loremSubTitleMessage }}</p>
     <app-test3></app-test3>
-    <hr>
+    <!-- <hr>
     <app-employee-list></app-employee-list>
-    <app-employee-detail></app-employee-detail>
+    <app-employee-detail></app-employee-detail> -->
   </div>
 </div>
 

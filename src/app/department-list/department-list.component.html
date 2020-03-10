@@ -1,0 +1,5 @@
+<h3>Departments Component</h3>
+<ul *ngFor="let department of departments; index as index">
+  <!-- <li (click)="goToDepartment(department)">{{ department.id }} - {{ department.name }}</li> -->
+  <li><a [routerLink]="['/departments', department.id]">{{ department.id }} - {{ department.name }}</a></li>
+</ul>
